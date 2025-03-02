@@ -94,7 +94,7 @@ for (let i = 1; i < 132; i++) {
         error
       );
     });
-  }
+}
 
 console.log(`Pokémon procesados: ${contador}`);
 
@@ -153,51 +153,29 @@ document.querySelector("#search").addEventListener("keydown", function (e) {
   }
 });
 
-document
-  .querySelector("#grass-btn")
-  .addEventListener("click", () => filtrarHabilidad("grass"));
-document
-  .querySelector("#poison-btn")
-  .addEventListener("click", () => filtrarHabilidad("poison"));
-document
-  .querySelector("#fire-btn")
-  .addEventListener("click", () => filtrarHabilidad("fire"));
-document
-  .querySelector("#flying-btn")
-  .addEventListener("click", () => filtrarHabilidad("flying"));
-document
-  .querySelector("#water-btn")
-  .addEventListener("click", () => filtrarHabilidad("water"));
-document
-  .querySelector("#bug-btn")
-  .addEventListener("click", () => filtrarHabilidad("bug"));
-document
-  .querySelector("#normal-btn")
-  .addEventListener("click", () => filtrarHabilidad("normal"));
-document
-  .querySelector("#electric-btn")
-  .addEventListener("click", () => filtrarHabilidad("electric"));
-document
-  .querySelector("#ground-btn")
-  .addEventListener("click", () => filtrarHabilidad("ground"));
-document
-  .querySelector("#fairy-btn")
-  .addEventListener("click", () => filtrarHabilidad("fairy"));
-document
-  .querySelector("#fighting-btn")
-  .addEventListener("click", () => filtrarHabilidad("fighting"));
-document
-  .querySelector("#psychic-btn")
-  .addEventListener("click", () => filtrarHabilidad("psychic"));
-document
-  .querySelector("#rock-btn")
-  .addEventListener("click", () => filtrarHabilidad("rock"));
-document
-  .querySelector("#ice-btn")
-  .addEventListener("click", () => filtrarHabilidad("ice"));
-document
-  .querySelector("#steel-btn")
-  .addEventListener("click", () => filtrarHabilidad("steel"));
-document
-  .querySelector("#ghost-btn")
-  .addEventListener("click", () => filtrarHabilidad("ghost"));
+function filtrarHabilidadEventos(boton, habilidad) {
+  document
+    .querySelector(boton)
+    .addEventListener("click", () => filtrarHabilidad(habilidad));
+}
+const arrayHabsYBtns = [
+  ["#grass-btn", "grass"],
+  ["#poison-btn", "poison"],
+  ["#fire-btn", "fire"],
+  ["#flying-btn", "flying"],
+  ["#water-btn", "water"],
+  ["#bug-btn", "bug"],
+  ["#normal-btn", "normal"],
+  ["#electric-btn", "electric"],
+  ["#ground-btn", "ground"],
+  ["#fairy-btn", "fairy"],
+  ["#fighting-btn", "fighting"],
+  ["#psychic-btn", "psychic"],
+  ["#rock-btn", "rock"],
+  ["#ice-btn", "ice"],
+  ["#steel-btn", "steel"],
+  ["#ghost-btn", "ghost"],
+];
+arrayHabsYBtns.forEach((habYBtn) =>
+  filtrarHabilidadEventos(habYBtn[0], habYBtn[1])
+);
